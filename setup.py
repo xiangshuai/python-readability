@@ -21,7 +21,7 @@ setup(
     test_suite = "tests.test_article_only",
     long_description=open("README.rst").read(),
     license="Apache License 2.0",
-    url="http://github.com/buriy/python-readability",
+    url="http://github.com/xiangshuai/python-readability",
     packages=['readability', 'readability.compat'],
     install_requires=[
         "chardet",
