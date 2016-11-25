@@ -1,4 +1,5 @@
 import re
+import regex
 
 
 #FIXME: use with caution, can leak memory
@@ -42,6 +43,7 @@ def describe(node, depth=1):
 
 
 RE_COLLAPSE_WHITESPACES = re.compile('\s+', re.U)
+#RE_COLLAPSE_WHITESPACES = regex.compile(r"\p{L}+['-]*\p{L}+")
 
 
 def text_content(elem, length=40):

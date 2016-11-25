@@ -80,7 +80,7 @@ class Document:
     """Class to build a etree document out of html."""
 
     def __init__(self, input, positive_keywords=None, negative_keywords=None,
-                 url=None, min_text_length=25, retry_length=250, xpath=False):
+                 url=None, min_text_length=15, retry_length=250, xpath=False):
         """Generate the document
 
         :param input: string of the html content.
@@ -206,6 +206,7 @@ class Document:
                         if article is None:
                             article = self.html
                 cleaned_article = self.sanitize(article, candidates)
+
 
                 article_length = len(cleaned_article or '')
                 retry_length = self.retry_length
@@ -612,6 +613,7 @@ def main():
     parser.add_option('-n', '--negative-keywords', default=None, help="negative keywords (separated with comma)", action='store')
     (options, args) = parser.parse_args()
 
+    logging.basicConfig(level=VERBOSITY[3], filename=options.log, format='%(asctime)s: %(levelname)s: %(message)s (at %(filename)s: %(lineno)d)')
     if options.verbose:
         logging.basicConfig(level=VERBOSITY[options.verbose], filename=options.log,
             format='%(asctime)s: %(levelname)s: %(message)s (at %(filename)s: %(lineno)d)')
