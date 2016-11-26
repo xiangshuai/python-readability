@@ -80,7 +80,7 @@ class Document:
     """Class to build a etree document out of html."""
 
     def __init__(self, input, positive_keywords=None, negative_keywords=None,
-                 url=None, min_text_length=15, retry_length=250, xpath=False):
+                 url=None, min_text_length=25, retry_length=250, xpath=False):
         """Generate the document
 
         :param input: string of the html content.
